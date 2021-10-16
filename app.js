@@ -152,6 +152,7 @@ let port = process.env.PORT;
 if (port == null || port == "") {
   port = 8080;
 } 
-app.listen(8080, function() {
-  console.log("Server has started Successfully.");
+
+app.listen(process.env.PORT || 8080, function(){
+  console.log("Server has successfully started.", this.address().port, app.settings.env);
 });
